@@ -1,0 +1,16 @@
+{
+	"compatibility_date": "2025-10-08",
+	"main": "src/index.ts",
+	"name": "journalin-openapi",
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "journalin-db",
+			"database_id": "80d3006d-ec7a-4fb3-8d85-328c77e53058"
+		}
+	]
+}
