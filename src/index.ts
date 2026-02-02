@@ -2,13 +2,15 @@ import { ApiException, fromHono } from "chanfana";
 import { Hono } from "hono";
 import { ContentfulStatusCode } from "hono/utils/http-status";
 import { DummyEndpoint } from "./endpoints/dummyEndpoint";
-
+import { cors } from 'hono/cors';
 import { SaveItinerary } from './endpoints/itineraries/save';
 import { CompareItineraries } from './endpoints/itineraries/compare';
 import { RestoreItinerary } from "./endpoints/itineraries/restore";
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
+
+app.use('*', cors());
 
 app.onError((err, c) => {
 	if (err instanceof ApiException) {
